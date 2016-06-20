@@ -19,7 +19,7 @@ var SongQueue = Songs.extend({
   },
 
   playFirst: function() {
-    // console.log('first', this.first());
+    this.first().play();
   }
 
 });
