@@ -13,10 +13,13 @@ var SongQueue = Songs.extend({
         this.playFirst();
       }
     });
+    this.listenTo(this, 'dequeue', function(song) {
+      this.remove(song);
+    });
   },
 
   playFirst: function() {
-    console.log('first', this.first());
+    // console.log('first', this.first());
   }
 
 });
