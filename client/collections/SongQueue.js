@@ -9,12 +9,10 @@ var SongQueue = Songs.extend({
     });
     this.listenTo(this, 'ended', function() {
       this.shift();
+      if (this.first()) {
+        this.playFirst();
+      }
     });
-    // this.on('add', function() {
-      // if (this.length === 1) {
-      //   this.playFirst(); 
-      // }
-    // });
   },
 
   playFirst: function() {
