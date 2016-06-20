@@ -6,8 +6,9 @@ var SongQueue = Songs.extend({
     //   console.log('listening to model');
     // });
     this.on('add', function() {
-      
-      this.playFirst();
+      if (this.length === 1) {
+        this.playFirst(); 
+      }
     });
   },
 
